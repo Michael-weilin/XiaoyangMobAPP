@@ -1,0 +1,28 @@
+#persudo code
+#q1
+while i<100{ consolo.log(i) i+=2}
+for (i=0, i<100, i+=2){consolo.log(i)}
+
+#2
+var readlineSync
+while true;
+if input=end;break
+else
+phasefloat()
+consolo.log
+sum()
+average()
+
+#3
+phaseint(input)
+for(i=0,i<12,i++){consolo.log(i*input)}
+
+#4
+input
+dict{a-z:count=0}
+if char in dict count += 1
+char largest = a
+for char in dict if char.value > largest.value
+largest = char
+
+consolo.log(largest)
