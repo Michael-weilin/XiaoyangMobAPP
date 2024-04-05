@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './style.css';
 import Product from './data';
 const root = createRoot(document.getElementById('root'));
-root.render(<StrictMode><TaskOne /><TaskTwoContainer /><TaskThreeContainer /></StrictMode>);
+root.render(<StrictMode><TaskOne /><TaskTwoContainer /><TaskThreeContainer /><TaskFourContainer /></StrictMode>);
 export function TaskOne() {
     const msg = 'Hello World'
     return(<div className='App'><h2> {msg} </h2></div>);
@@ -36,6 +36,35 @@ function TaskThreeContainer() {
             <ul>
                 <TaskThree product={productInfo} /> {'Laptop','High-performance laptop',1200.00}
             </ul>
+        </div>
+    );
+};
+function TaskFour(props) {
+    const { name, unitPrice } = props.product;
+    return (
+        <tr>
+            <td>{name}</td>
+            <td>${unitPrice.toFixed(2)}</td>
+        </tr>
+    );
+};
+function TaskFourContainer() {
+    return (
+        <div className='App'>
+            <h2>Product Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Unit Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {Product.map((product, index) => (
+                        <TaskFour key={index} product={product} />
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }
